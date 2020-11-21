@@ -1,12 +1,15 @@
+<!--　トップページ　 created by Hirokazu Niimoto-->
+
 <?php include "getdata.php" ?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>アプリ名</title>
-
-    <!-- マテリアルデザイン bootstrap -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
     <!-- Bootstrap core CSS -->
     <link href="static/css/bootstrap.min.css" rel="stylesheet">
@@ -14,215 +17,188 @@
     <link href="static/css/mdb.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
     <link href="static/css/style.min.css" rel="stylesheet">
-    <!-- MY custom styles  -->
+
     <link href="static/css/additional.css" rel="stylesheet">
+
     <style type="text/css">
-      html,
-      body,
-      header,
-      .view {
-        height: 100%;
-      }
-      .navbar{
-        background-color:rgba(0,136,255,0.7);
-
-      }
-
-      @media (max-width: 740px) {
-        html,
-        body,
-        header,
-        .view {
-          height: 1000px;
+      @media (min-width: 800px) and (max-width: 850px) {
+        .navbar:not(.top-nav-collapse) {
+          background: #1C2331 !important;
         }
       }
+      .navbar{background-color:rgba(0,136,255,0.3);}
 
-      @media (min-width: 800px) and (max-width: 850px) {
-        html,
-        body,
-        header,
-        .view {
-          height: 650px;
-        }
-
-      }
-      @media (min-width: 800px) and (max-width: 850px) {
-                .navbar:not(.top-nav-collapse) {
-                    background: #1C2331!important;
-                }
-            }
-            /*#1C2331*/
     </style>
-    <!-- ここまで-->
+
 
   </head>
   <body>
 
-    <!--ログインモーダル-->
-    <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header text-center">
-          <h4 class="modal-title w-100 font-weight-bold">ログイン</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body mx-3">
-          <div class="md-form mb-5">
-            <i class="fas fa-envelope prefix grey-text"></i>
-            <input type="email" id="defaultForm-email" class="form-control validate">
-            <label data-error="wrong" data-success="right" for="defaultForm-email">ユーザー名またはメールアドレス</label>
+        <!--ログインモーダル-->
+        <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header text-center">
+              <h4 class="modal-title w-100 font-weight-bold">ログイン</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body mx-3">
+              <div class="md-form mb-5">
+                <i class="fas fa-envelope prefix grey-text"></i>
+                <input type="email" id="defaultForm-email" class="form-control validate">
+                <label data-error="wrong" data-success="right" for="defaultForm-email">ユーザー名またはメールアドレス</label>
+              </div>
+
+              <div class="md-form mb-4">
+                <i class="fas fa-lock prefix grey-text"></i>
+                <input type="password" id="defaultForm-pass" class="form-control validate">
+                <label data-error="wrong" data-success="right" for="defaultForm-pass">パスワード</label>
+              </div>
+
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+              <button class="btn btn-primary">ログイン</button>
+              <p class="mt-3 ml-2">または</p>
+              <!--<button class="btn btn-primary ml-2">新規登録</button>-->
+              <a href="" class="" data-dismiss="modal" data-toggle="modal" data-target="#modalRegisterForm">新規登録</a>
+            </div>
+
           </div>
-
-          <div class="md-form mb-4">
-            <i class="fas fa-lock prefix grey-text"></i>
-            <input type="password" id="defaultForm-pass" class="form-control validate">
-            <label data-error="wrong" data-success="right" for="defaultForm-pass">パスワード</label>
-          </div>
-
-        </div>
-        <div class="modal-footer d-flex justify-content-center">
-          <button class="btn btn-primary">ログイン</button>
-          <p class="mt-3 ml-2">または</p>
-          <!--<button class="btn btn-primary ml-2">新規登録</button>-->
-          <a href="" class="" data-dismiss="modal" data-toggle="modal" data-target="#modalRegisterForm">新規登録</a>
-        </div>
-
-      </div>
-    </div>
-  </div>
-    <!--ログインモーダル終わり-->
-
-    <!--新規登録モーダル-->
-    <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header text-center">
-          <h4 class="modal-title w-100 font-weight-bold">新規登録</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body mx-3">
-          <div class="md-form mb-5">
-            <i class="fas fa-user prefix grey-text"></i>
-            <input type="text" id="orangeForm-name" class="form-control validate">
-            <label data-error="wrong" data-success="right" for="orangeForm-name">ユーザー名</label>
-          </div>
-          <div class="md-form mb-5">
-            <i class="fas fa-envelope prefix grey-text"></i>
-            <input type="email" id="orangeForm-email" class="form-control validate">
-            <label data-error="wrong" data-success="right" for="orangeForm-email">メールアドレス</label>
-          </div>
-
-          <div class="md-form mb-4">
-            <i class="fas fa-lock prefix grey-text"></i>
-            <input type="password" id="orangeForm-pass" class="form-control validate">
-            <label data-error="wrong" data-success="right" for="orangeForm-pass">パスワード</label>
-          </div>
-
-          <div class="md-form mb-4">
-            <i class="fas fa-lock prefix grey-text"></i>
-            <input type="password" id="orangeForm-pass" class="form-control validate">
-            <label data-error="wrong" data-success="right" for="orangeForm-pass">パスワード（確認）</label>
-          </div>
-
-        </div>
-        <div class="modal-footer d-flex justify-content-center">
-          <button class="btn btn-deep-orange">登録</button>
         </div>
       </div>
-    </div>
-  </div>
-    <!--新規登録モーダル終わり-->
+        <!--ログインモーダル終わり-->
 
+        <!--新規登録モーダル-->
+        <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header text-center">
+              <h4 class="modal-title w-100 font-weight-bold">新規登録</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body mx-3">
+              <div class="md-form mb-5">
+                <i class="fas fa-user prefix grey-text"></i>
+                <input type="text" id="orangeForm-name" class="form-control validate">
+                <label data-error="wrong" data-success="right" for="orangeForm-name">ユーザー名</label>
+              </div>
+              <div class="md-form mb-5">
+                <i class="fas fa-envelope prefix grey-text"></i>
+                <input type="email" id="orangeForm-email" class="form-control validate">
+                <label data-error="wrong" data-success="right" for="orangeForm-email">メールアドレス</label>
+              </div>
 
-    <!--インターンシップを探すモーダル-->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-    aria-hidden="true">
+              <div class="md-form mb-4">
+                <i class="fas fa-lock prefix grey-text"></i>
+                <input type="password" id="orangeForm-pass" class="form-control validate">
+                <label data-error="wrong" data-success="right" for="orangeForm-pass">パスワード</label>
+              </div>
 
-    <!-- Add .modal-dialog-centered to .modal-dialog to vertically center the modal -->
-    <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="md-form mb-4">
+                <i class="fas fa-lock prefix grey-text"></i>
+                <input type="password" id="orangeForm-pass" class="form-control validate">
+                <label data-error="wrong" data-success="right" for="orangeForm-pass">パスワード（確認）</label>
+              </div>
 
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title" id="exampleModalLongTitle"><strong>職種を選択してください</strong></h4>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+              <button class="btn btn-deep-orange">登録</button>
+            </div>
+          </div>
         </div>
-        <div class="modal-body row">
-          <div class="col-md-3 col-2"></div>
-
-          <form class="col-md-6 col-8" action="main.php#allinternship" method="POST">
-            <!-- Default unchecked -->
-            <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="defaultUnchecked1" value="エンジニア" name=fields[]>
-                <label class="custom-control-label " for="defaultUnchecked1">エンジニア</label>
-            </div>
-            <!-- Default unchecked -->
-            <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="defaultUnchecked2" value="" name=fields[]>
-                <label class="custom-control-label" for="defaultUnchecked2">デザイン・アート</label>
-            </div>
-            <!-- Default unchecked -->
-            <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="defaultUnchecked3" name=fields[]>
-                <label class="custom-control-label" for="defaultUnchecked3">編集・ライティング</label>
-            </div>
-            <!-- Default unchecked -->
-            <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="defaultUnchecked4" value="マーケティング" name=fields[]>
-                <label class="custom-control-label" for="defaultUnchecked4">マーケティング・PR</label>
-            </div>
-            <!-- Default unchecked -->
-            <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="defaultUnchecked5" name=fields[]>
-                <label class="custom-control-label" for="defaultUnchecked5">セールス・事業開発</label>
-            </div>
-            <!-- Default unchecked -->
-            <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="defaultUnchecked6" value="コンサルティング" name=fields[]>
-                <label class="custom-control-label" for="defaultUnchecked6">コンサルティング</label>
-            </div>
-            <!-- Default unchecked -->
-            <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="defaultUnchecked7" name=fields[]>
-                <label class="custom-control-label" for="defaultUnchecked7">メディカル系</label>
-            </div>
-            <!-- Default unchecked -->
-            <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="defaultUnchecked8" name=fields[]>
-                <label class="custom-control-label" for="defaultUnchecked8">その他</label>
-            </div>
-            <hr>
-
-            <button type="submit" class="btn btn-primary" name="searchfield">上記の条件で探す</button>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
-
-          </form>
-          <div class="col-md-3 col-2"></div>
-        </div>
-        <!--
-        <div class="modal-footer">
-          <form class="" action="index.html" method="post">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary" >Save changes</button>
-          </form>
-        </div>-->
       </div>
-    </div>
-  </div>
-
-    <!--インターンシップを探すモーダル終わり-->
+        <!--新規登録モーダル終わり-->
 
 
+        <!--インターンシップを探すモーダル-->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
 
-    <!-- Navbar -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar <!--primary-color-->">
+        <!-- Add .modal-dialog-centered to .modal-dialog to vertically center the modal -->
+        <div class="modal-dialog modal-dialog-centered" role="document">
+
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title" id="exampleModalLongTitle"><strong>職種を選択してください</strong></h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body row">
+              <div class="col-md-3 col-2"></div>
+
+              <form class="col-md-6 col-8" action="main.php#allinternship" method="POST">
+                <!-- Default unchecked -->
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="defaultUnchecked1" value="エンジニア" name=fields[]>
+                    <label class="custom-control-label " for="defaultUnchecked1">エンジニア</label>
+                </div>
+                <!-- Default unchecked -->
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="defaultUnchecked2" value="" name=fields[]>
+                    <label class="custom-control-label" for="defaultUnchecked2">デザイン・アート</label>
+                </div>
+                <!-- Default unchecked -->
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="defaultUnchecked3" name=fields[]>
+                    <label class="custom-control-label" for="defaultUnchecked3">編集・ライティング</label>
+                </div>
+                <!-- Default unchecked -->
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="defaultUnchecked4" value="マーケティング" name=fields[]>
+                    <label class="custom-control-label" for="defaultUnchecked4">マーケティング・PR</label>
+                </div>
+                <!-- Default unchecked -->
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="defaultUnchecked5" name=fields[]>
+                    <label class="custom-control-label" for="defaultUnchecked5">セールス・事業開発</label>
+                </div>
+                <!-- Default unchecked -->
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="defaultUnchecked6" value="コンサルティング" name=fields[]>
+                    <label class="custom-control-label" for="defaultUnchecked6">コンサルティング</label>
+                </div>
+                <!-- Default unchecked -->
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="defaultUnchecked7" name=fields[]>
+                    <label class="custom-control-label" for="defaultUnchecked7">メディカル系</label>
+                </div>
+                <!-- Default unchecked -->
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="defaultUnchecked8" name=fields[]>
+                    <label class="custom-control-label" for="defaultUnchecked8">その他</label>
+                </div>
+                <hr>
+
+                <button type="submit" class="btn btn-primary" name="searchfield">上記の条件で探す</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+
+              </form>
+              <div class="col-md-3 col-2"></div>
+            </div>
+            <!--
+            <div class="modal-footer">
+              <form class="" action="index.html" method="post">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary" >Save changes</button>
+              </form>
+            </div>-->
+          </div>
+        </div>
+      </div>
+
+        <!--インターンシップを探すモーダル終わり-->
+
+
+
+    <!-- Navbar primary-color-->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
       <div class="container">
 
         <!-- Brand -->
@@ -342,9 +318,9 @@
       </div>
       <!-- Mask & flexbox options-->
 
+
     </div>
     <!-- Full Page Intro -->
-
 
     <a name="allinternship" class="pt-5"></a>
     <p class="pt-4"></p>
