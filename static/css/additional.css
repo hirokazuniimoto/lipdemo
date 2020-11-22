@@ -31,14 +31,14 @@
 /* ローディング画面 */
 #loading {
   width: 100vw;
-  height: 100vh;
+  height: 100vw;
   transition: all 1s;
   background-color: #0bd;
 }
 .spinner {
   width: 100px;
   height: 100px;
-  margin: 200px auto;
+  /*margin:200px;*/
   background-color: #fff;
   border-radius: 100%;
   animation: sk-scaleout 1.0s infinite ease-in-out;
