@@ -17,7 +17,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>アプリ名5</title>
+    <title>アプリ名6</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
     <!-- Bootstrap core CSS -->
@@ -48,7 +48,6 @@
       <div class="spinner"></div>
     </div>
 
-    
         <form class="" action="" method="post">
           <!--ログインモーダル-->
           <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
@@ -286,11 +285,14 @@
     </nav>
     <!-- Navbar -->
 
+
+
     <!-- Full Page Intro -->  <!--https://photohito.k-img.com/uploads/photo130/user129768/a/7/a74efb58fa3d98eedb1a35afa7b7bcb5/a74efb58fa3d98eedb1a35afa7b7bcb5_l.jpg    background-attachment: fixed;-->
-    <div class="view full-page-intro gallery" style="background-image: url('https://careergarden.jp/dtp-designer/wp-content/blogs.dir/388/files/4a2631ded52c08e466396b3f7a2c6f97.jpg');background-color:rgba(0,98,255,0.4); background-repeat: no-repeat; background-size: cover;">
+    <div class="view full-page-intro" style="background-image: url('https://careergarden.jp/dtp-designer/wp-content/blogs.dir/388/files/4a2631ded52c08e466396b3f7a2c6f97.jpg');background-color:rgba(0,98,255,0.4); background-repeat: no-repeat; background-size: cover;">
+
 
       <!-- Mask & flexbox options--> <!--mask rgba-black-light-->
-      <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+      <div class="mask rgba-black-light d-flex justify-content-center align-items-center ">
 
         <!-- Content -->
         <div class="container">
@@ -604,7 +606,19 @@
 
       //ローディング画面
       window.onload = function() {
+
         const spinner = document.getElementById('loading');
+
+        // ビジーwaitを使う方法
+        function sleep(waitMsec) {
+          var startMsec = new Date();
+
+          // 指定ミリ秒間だけループさせる（CPUは常にビジー状態）
+          while (new Date() - startMsec < waitMsec);
+        }
+
+        sleep(5000);
+
         spinner.classList.add('loaded');
       }
     </script>
