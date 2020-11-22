@@ -31,14 +31,19 @@
 /* ローディング画面 */
 #loading {
   width: 100vw;
-  height: 100vw;
+  height: 100vh;
   transition: all 1s;
   background-color: #0bd;
+  /* 以下のコードを追加 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
 }
 .spinner {
   width: 100px;
   height: 100px;
-  /*margin:200px;*/
+  margin:200px auto;
   background-color: #fff;
   border-radius: 100%;
   animation: sk-scaleout 1.0s infinite ease-in-out;
