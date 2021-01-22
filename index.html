@@ -1429,28 +1429,6 @@ h1 {
           </ul>
           <!-- Right -->
 
-					<?php
-					//通知件数の取得
-					$USER = 'root';
-					$PW = 'pass';
-					$dnsinfo = "mysql:dbname=lip-next;host=localhost;charset=utf8";
-
-					$userID = $_SESSION["USERID"];
-					try{
-						$pdo = new PDO($dnsinfo,$USER,$PW);
-						$sql = "SELECT COUNT(*) FROM chat WHERE userID = ? AND chatcondition = ? AND sender = ? "; //  OR (userID = ? AND internshipID = ?) DESC ORDER BY datenow
-						$stmt = $pdo->prepare($sql);
-						$stmt->execute(array($userID,"unread","companysend"));
-						//$row = $stmt->fetch(PDO::FETCH_ASSOC);
-						$num = $stmt->fetchColumn();
-						if ($num == 0){
-							$num = "";
-						}
-					}catch(PDOException $e){
-					$res2 = $e->getMessage();
-					}
-					 ?>
-
           <ul class="navbar-nav nav-flex-icons">
             <li class="nav-item mr-2" id="mailicon">
 							<a class="nav-link dropdown-toggle hidden-arrow mr-2" role="button" alt="Notifications" onclick="messagelist()" id="navbarNotification" data-toggle="modal" data-target="#chatlistmodal">
@@ -1583,7 +1561,7 @@ h1 {
 		    <!-- Single item  w-100  -->
 		    <div class="carousel-item">
 		      <img
-		        src="static\img\ud071-07.jpg"
+		        src="https://capa.getnavi.jp/wps/wp-content/uploads/2018/04/Fuzimura07.jpg"
 		        class="d-block "
 		        alt="..."
 		        style="dwidth: 100vw;height: 100vh;"
