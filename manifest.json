@@ -1,0 +1,20 @@
+{
+  "name": "LIP-NEXT",　//ここをサイト名に
+  "short_name": "LIP-NEXT", //ここをサイト名に
+  "theme_color": "rgb(15,139,255,0.9)", //好きなカラーコードを設定
+  "background_color": "rgb(15,139,255,0.9)", //好きなカラーコードを設定
+  "display": "standalone", //いじる必要なし
+  "scope": "/", //いじる必要なし
+  "start_url": "/LIP-NEXT",　//サイト名
+  "icons": [{
+      "src": "static\\img\\Lchar192.png",　//下記サイズの画像ファイルのパスを記載
+      "sizes": "192x192",　//必要な画像サイズ
+      "type": "image/png"　//いじる必要なし
+    }, {
+      "src": "static\img\Lchar.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }],
+  "start_url": "/main.php",
+  "display": "standalone",
+}
