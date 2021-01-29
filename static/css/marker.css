@@ -1,0 +1,21 @@
+/*マーカーアニメーション*/
+.marker-animation.active{
+    background-position: -100% .9em;/*←太さを指定*/
+    color:black;
+}
+
+.marker-animation {
+    color: white;
+    background-image: -webkit-linear-gradient(left, transparent 50%, rgb(15,139,255,0.9) 50%);
+    background-image: -moz-linear-gradient(left, transparent 50%, rgb(255, 0, 102) 50%);
+    background-image: -ms-linear-gradient(left, transparent 50%, rgb(255, 0, 102) 50%);
+    background-image: -o-linear-gradient(left, transparent 50%, rgb(255, 0, 102) 50%);
+    background-image: linear-gradient(left, transparent 50%, rgb(255, 0, 102) 50%);
+
+    /*background:linear-gradient(transparent 60%, #FF0066 60%);*/
+    background-repeat: repeat-x;
+    background-size: 200% .8em;
+  background-position: 0 .3em;
+    transition: all 3s ease;
+    font-weight: bold;
+}

@@ -28,52 +28,6 @@
     }
 }
 
-/* ローディング画面 */
-#loading {
-  width: 100vw;
-  height: 100vh;
-  transition: all 1s;
-  background-color: #0bd;
-  /* 以下のコードを追加 */
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999;
-}
-.spinner {
-  width: 100px;
-  height: 100px;
-  margin:200px auto;
-  background-color: #fff;
-  border-radius: 100%;
-  animation: sk-scaleout 1.0s infinite ease-in-out;
-}
-/* ローディングアニメーション */
-@keyframes sk-scaleout {
-  0% {
-    transform: scale(0);
-  } 100% {
-    transform: scale(1.0);
-    opacity: 0;
-  }
-}
-.loaded {
-  opacity: 0;
-  display: none;
-}
-/* コンテンツ部分の装飾 */
-.gallery {
-  display: grid;
-  gap: .5rem;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
-
-
-
-
-
-
-
 /*背景ぼかし*/
 /*
 .top::before {
@@ -86,14 +40,15 @@
   bottom: -5px;
   left: -5px;
 }
-
 */
-
 
 @media screen and (max-width:480px){
   .apptitle{font-size:40px;}
   .appcopy{font-size: 30px;}
   .appexplain{font-size: 20px;}
+  .logo{width:70%;}
+  .title2{font-size: 40px}
+  .explaintitle2{font-size: 20px}
 }
 
 @media screen and (max-width: 1300px) and (min-width: 480px){
@@ -101,10 +56,15 @@
   .appcopy{font-size: 30px;}
   .appexplain{font-size: 25px;}
   .watchallintern{font-size: 25px;}
+  .logo{width:50%;}
+  .title2{font-size:80px }
+  .explaintitle2{font-size: 30px}
 }
 
 @media screen and (min-width:1301px){
   .apptitle{font-size:70px;}
   .appcopy{font-size: 40px;}
   .appexplain{font-size: 35px;}
+  .title2{font-size: 110px}
+  .explaintitle2{font-size: 100px}
 }

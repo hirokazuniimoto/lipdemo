@@ -1,0 +1,71 @@
+/*マースオーバーした時に色が変わる*/
+.messageuser {
+   background-color:white;
+   padding: 10px;
+   font-size: 18px;
+   -webkit-transition: all 0.3s ease;
+   -moz-transition: all 0.3s ease;
+   -o-transition: all 0.3s ease;
+   transition: all  0.3s ease;
+   }
+.rightarrow {
+    display:none;
+    }
+.messageuser:hover {
+   background-color: #ffc9d7;
+   padding: 25px;
+   font-size: 24px;
+   }
+   /*マウスオーバーしたらメッセージ表示*/
+.messageuser:hover  .rightarrow {
+  display:block;
+  margin-top: 12px;
+}
+
+/*マースオーバーした時に色が変わる*/
+.bookmarkuser {
+   background-color:white;
+   padding: 10px;
+   font-size: 18px;
+   -webkit-transition: all 0.3s ease;
+   -moz-transition: all 0.3s ease;
+   -o-transition: all 0.3s ease;
+   transition: all  0.3s ease;
+   }
+.rightarrow {
+    display:none;
+    }
+.bookmarkuser:hover {
+   background-color:#b1eeff;
+   padding: 25px;
+   font-size: 24px;
+   }
+   /*マウスオーバーしたらメッセージ表示*/
+.bookmarkuser:hover  .rightarrow {
+  display:block;
+  margin-top: 12px;
+}
+
+/*マースオーバーした時に色が変わる*/
+.enterprisematter {
+   background-color:white;
+   padding: 10px;
+   font-size: 18px;
+   -webkit-transition: all 0.3s ease;
+   -moz-transition: all 0.3s ease;
+   -o-transition: all 0.3s ease;
+   transition: all  0.3s ease;
+   }
+.rightarrow {
+    display:none;
+    }
+.enterprisematter:hover {
+   background-color:#98FB98;
+   padding: 25px;
+   font-size: 24px;
+   }
+   /*マウスオーバーしたらメッセージ表示*/
+.enterprisematter:hover  .rightarrow {
+  display:block;
+  margin-top: 12px;
+}
